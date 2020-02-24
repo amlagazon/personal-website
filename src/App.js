@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./component/menu/Navbar";
-import Sidebar from "./component/menu/Sidebar";
+import SidebarDrawer from "./component/menu/SidebarDrawer";
 import { Grid } from "semantic-ui-react";
 import { useMediaQuery } from "react-responsive";
 import "./App.css";
@@ -19,7 +19,7 @@ function App() {
       <Grid>
         <Grid.Row columns={1} only="mobile">
           <Grid.Column>
-            <Sidebar />
+            <SidebarDrawer />
           </Grid.Column>
         </Grid.Row>
       </Grid>

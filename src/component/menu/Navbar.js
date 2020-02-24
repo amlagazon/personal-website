@@ -27,13 +27,6 @@ class Navbar extends Component {
                   active={activeItem === "friends"}
                   onClick={this.handleItemClick}
                 />
-                <Menu.Menu position="right">
-                  <Menu.Item
-                    name="logout"
-                    active={activeItem === "logout"}
-                    onClick={this.handleItemClick}
-                  />
-                </Menu.Menu>
               </Menu>
             </Grid.Column>
           </Grid.Row>
