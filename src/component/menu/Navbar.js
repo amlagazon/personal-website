@@ -18,13 +18,28 @@ class Navbar extends Component {
                   onClick={this.handleItemClick}
                 />
                 <Menu.Item
-                  name="messages"
-                  active={activeItem === "messages"}
+                  name="about"
+                  active={activeItem === "about"}
                   onClick={this.handleItemClick}
                 />
                 <Menu.Item
-                  name="friends"
-                  active={activeItem === "friends"}
+                  name="portfolio"
+                  active={activeItem === "portfolio"}
+                  onClick={this.handleItemClick}
+                />
+                <Menu.Item
+                  name="experience"
+                  active={activeItem === "experience"}
+                  onClick={this.handleItemClick}
+                />
+                <Menu.Item
+                  name="education"
+                  active={activeItem === "education"}
+                  onClick={this.handleItemClick}
+                />
+                <Menu.Item
+                  name="contact"
+                  active={activeItem === "contact"}
                   onClick={this.handleItemClick}
                 />
               </Menu>

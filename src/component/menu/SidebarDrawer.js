@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Grid, Icon, Segment, Sidebar } from "semantic-ui-react";
+import { Menu, Grid, Segment, Sidebar, Icon } from "semantic-ui-react";
 import "./Menu.css";
 
 class SidebarDrawer extends Component {
@@ -14,7 +14,7 @@ class SidebarDrawer extends Component {
     this.setState({ visible: !this.state.visible });
   }
   render() {
-    const { visible } = this.state;
+    const { visible, activeItem } = this.state;
     return (
       <div>
         <Grid>
@@ -31,23 +31,62 @@ class SidebarDrawer extends Component {
                   visible={visible}
                   width="thin"
                 >
-                  <Menu.Item as="a">
-                    <Icon name="home" />
+                  <Menu.Item>
+                    <Icon name="question circle" />
+                  </Menu.Item>
+                  <Menu.Item
+                    as="a"
+                    name="home"
+                    active={activeItem === "home"}
+                    onClick={this.handleItemClick}
+                  >
                     Home
                   </Menu.Item>
-                  <Menu.Item as="a">
-                    <Icon name="gamepad" />
-                    Games
+                  <Menu.Item
+                    as="a"
+                    name="about"
+                    active={activeItem === "about"}
+                    onClick={this.handleItemClick}
+                  >
+                    About
                   </Menu.Item>
-                  <Menu.Item as="a">
-                    <Icon name="camera" />
-                    Channels
+                  <Menu.Item
+                    as="a"
+                    name="portfolio"
+                    active={activeItem === "portfolio"}
+                    onClick={this.handleItemClick}
+                  >
+                    Portfolio
+                  </Menu.Item>
+                  <Menu.Item
+                    as="a"
+                    name="experience"
+                    active={activeItem === "experience"}
+                    onClick={this.handleItemClick}
+                  >
+                    Experience
+                  </Menu.Item>
+                  <Menu.Item
+                    as="a"
+                    name="education"
+                    active={activeItem === "education"}
+                    onClick={this.handleItemClick}
+                  >
+                    Education
+                  </Menu.Item>
+                  <Menu.Item
+                    as="a"
+                    name="contact"
+                    active={activeItem === "contact"}
+                    onClick={this.handleItemClick}
+                  >
+                    Contact
                   </Menu.Item>
                 </Sidebar>
 
                 <Sidebar.Pusher className="side-bar-content">
                   <Menu pointing secondary>
-                    <Menu.Item icon="content" onClick={this.show} />
+                    <Menu.Item icon="sidebar" onClick={this.show} />
                   </Menu>
                 </Sidebar.Pusher>
               </Sidebar.Pushable>
