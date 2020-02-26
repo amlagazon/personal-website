@@ -88,6 +88,7 @@ class SidebarDrawer extends Component {
                   <Menu pointing secondary>
                     <Menu.Item icon="sidebar" onClick={this.show} />
                   </Menu>
+                  {this.props.carousel}
                 </Sidebar.Pusher>
               </Sidebar.Pushable>
             </Grid.Column>

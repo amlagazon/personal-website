@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./component/menu/Navbar";
 import SidebarDrawer from "./component/menu/SidebarDrawer";
+import ProjectCarousel from "./component/portfolio/ProjectsCarousel";
 import { Grid } from "semantic-ui-react";
 import { useMediaQuery } from "react-responsive";
 import "./App.css";
@@ -19,17 +20,22 @@ function App() {
       <Grid>
         <Grid.Row columns={1} only="mobile">
           <Grid.Column>
-            <SidebarDrawer />
+            <SidebarDrawer carousel={<ProjectCarousel />} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
     );
   } else if (isDesktopOrLaptop || isTabletOrMobile) {
     return (
-      <Grid>
+      <Grid centered>
         <Grid.Row columns={1}>
           <Grid.Column>
             <Navbar />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row columns={1}>
+          <Grid.Column width={10}>
+            <ProjectCarousel />
           </Grid.Column>
         </Grid.Row>
       </Grid>
