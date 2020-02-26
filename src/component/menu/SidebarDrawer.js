@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import {
-  Menu,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  Segment,
-  Sidebar
-} from "semantic-ui-react";
+import { Menu, Grid, Icon, Segment, Sidebar } from "semantic-ui-react";
+import "./Menu.css";
 
 class SidebarDrawer extends Component {
   constructor(props) {
@@ -52,14 +45,10 @@ class SidebarDrawer extends Component {
                   </Menu.Item>
                 </Sidebar>
 
-                <Sidebar.Pusher>
+                <Sidebar.Pusher className="side-bar-content">
                   <Menu pointing secondary>
-                    <Menu.Item name="menu" onClick={this.show} />
+                    <Menu.Item icon="content" onClick={this.show} />
                   </Menu>
-                  <Header as="h3">Application Content</Header>
-                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-                  <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
                 </Sidebar.Pusher>
               </Sidebar.Pushable>
             </Grid.Column>
