@@ -1,45 +1,67 @@
 import React, { Component } from "react";
-import { Image, Segment } from "semantic-ui-react";
-import Carousel from "semantic-ui-carousel-react";
+import { Image } from "semantic-ui-react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import "./Portfolio.css";
-let elements = [
-  {
-    render: () => {
-      return (
-        <Image
-          id="img"
-          src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
-          fluid
-        />
-      );
-    }
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+    partialVisibilityGutter: 30
   },
-  {
-    render: () => {
-      return (
-        <Image
-          id="img"
-          src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg"
-          fluid
-        />
-      );
-    }
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    partialVisibilityGutter: 30
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
   }
-];
+};
+
 class ProjectsCarousel extends Component {
   render() {
     return (
-      <div className="carousel">
-        <Segment basic>
-          <Carousel
-            elements={elements}
-            duration={5000}
-            animation="fade left"
-            showNextPrev={false}
-            showIndicators={true}
-          />
-        </Segment>
-      </div>
+      <Carousel
+        focusOnSelect={true}
+        partialVisible={true}
+        responsive={responsive}
+        infinite={true}
+        autoPlaySpeed={3000}
+        autoPlay
+        itemClass="carousel-item"
+        containerClass="carousel-container"
+      >
+        <Image
+          size="large"
+          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+        />
+        <Image
+          size="large"
+          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+        />
+        <Image
+          size="large"
+          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+        />
+        <Image
+          size="large"
+          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+        />
+        <Image
+          size="large"
+          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+        />
+        <Image
+          size="large"
+          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+        />
+      </Carousel>
     );
   }
 }
