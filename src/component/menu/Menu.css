@@ -1,3 +1,15 @@
-.side-bar-content{
-    height: 100vh
+.side-bar-content {
+  height: 100vh;
+}
+.nav-bar {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: #016936;
+}
+.nav-bar-scrolled {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: rgb(15, 15, 15);
 }

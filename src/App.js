@@ -36,6 +36,10 @@ function App() {
         <Grid.Row columns={1}>
           <Grid.Column width={10}>
             <ProjectCarousel />
+            <ProjectCarousel />
+            <ProjectCarousel />
+            <ProjectCarousel />
+            <ProjectCarousel />
           </Grid.Column>
         </Grid.Row>
       </Grid>

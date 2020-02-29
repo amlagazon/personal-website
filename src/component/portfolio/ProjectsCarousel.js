@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Image } from "semantic-ui-react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Portfolio.css";
+import ProjectCard from "./ProjectCard";
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -12,7 +12,6 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 3,
-    partialVisibilityGutter: 30
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -33,34 +32,17 @@ class ProjectsCarousel extends Component {
         responsive={responsive}
         infinite={true}
         autoPlaySpeed={3000}
+        arrows={false}
         autoPlay
         itemClass="carousel-item"
         containerClass="carousel-container"
       >
-        <Image
-          size="large"
-          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-        />
-        <Image
-          size="large"
-          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-        />
-        <Image
-          size="large"
-          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-        />
-        <Image
-          size="large"
-          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-        />
-        <Image
-          size="large"
-          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-        />
-        <Image
-          size="large"
-          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-        />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
       </Carousel>
     );
   }
