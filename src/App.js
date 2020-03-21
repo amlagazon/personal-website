@@ -4,6 +4,7 @@ import PortfolioPage from "./component/pages/PortfolioPage";
 import { Grid } from "semantic-ui-react";
 import React from "react";
 import "./App.css";
+import HomePage from "./component/pages/HomePage";
 
 function App() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -26,17 +27,21 @@ function App() {
     );
   } else if (isDesktopOrLaptop || isTabletOrMobile) {
     return (
-      <Grid centered>
-        <Grid.Row columns={1}>
+      <Grid>
+        <Grid.Row>
           <Grid.Column>
             <Navbar />
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-          <Grid.Column width={10}>
-            <PortfolioPage />
-          </Grid.Column>
-        </Grid.Row>
+        <Grid.Row />
+        <div className="current-page">
+          <Grid.Row>
+            <Grid.Column>
+              <HomePage />
+              {/* <PortfolioPage /> */}
+            </Grid.Column>
+          </Grid.Row>
+        </div>
       </Grid>
     );
   }

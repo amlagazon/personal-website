@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
+import { Menu, Button } from "semantic-ui-react";
 import "./Menu.css";
 class Navbar extends Component {
   state = { activeItem: "home", scrolled: false };
@@ -9,7 +9,8 @@ class Navbar extends Component {
   }
 
   handleScroll = () => {
-    if (window.pageYOffset) {
+    console.log(window.pageYOffset);
+    if (window.pageYOffset > 300) {
       this.setState({ scrolled: true });
     } else {
       this.setState({ scrolled: false });
@@ -22,7 +23,7 @@ class Navbar extends Component {
         <Menu
           pointing
           secondary
-          inverted
+          inverted={!this.state.scrolled}
           size={this.state.scrolled ? "mini" : "huge"}
         >
           <Menu.Item
@@ -55,6 +56,21 @@ class Navbar extends Component {
             active={activeItem === "contact"}
             onClick={this.handleItemClick}
           />
+          <Menu.Item position="right">
+            <Button inverted size="tiny" icon="github" />
+            <Button
+              inverted
+              size="tiny"
+              style={{ marginLeft: "0.5em" }}
+              icon="deviantart"
+            />
+            <Button
+              size="tiny"
+              inverted
+              style={{ marginLeft: "0.5em" }}
+              icon="linkedin"
+            />
+          </Menu.Item>
         </Menu>
       </div>
     );
