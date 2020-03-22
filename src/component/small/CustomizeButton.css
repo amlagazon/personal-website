@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.basicBox {
+  width: 130px;
+  height: 65px;
+  margin: 15px auto;
+  margin-top: 20vh;
+  color: rgb(255, 145, 0);
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 65px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+svg rect,
+svg path,
+svg polyline {
+  fill: none;
+  stroke: rgb(255, 145, 0);
+  stroke-width: 5;
+}
+
+.basicBox:hover svg rect,
+.swiggleBox:hover svg path,
+.checkBox:hover svg polyline {
+  stroke: white;
+}
+
+.basicBox:hover {
+  color: white;
+}
+/* Basic Box */
+svg rect {
+  stroke-dasharray: 400, 0;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+.basicBox:hover svg rect {
+  stroke-width: 10;
+  color: white;
+  stroke-dasharray: 35, 245;
+  stroke-dashoffset: 38;
+}

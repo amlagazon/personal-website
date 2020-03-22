@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Menu, Button } from "semantic-ui-react";
 import "./Menu.css";
+import { Link } from "react-router-dom";
 class Navbar extends Component {
   state = { activeItem: "home", scrolled: false };
   handleItemClick = (_e, { name }) => this.setState({ activeItem: name });
@@ -10,7 +11,7 @@ class Navbar extends Component {
 
   handleScroll = () => {
     console.log(window.pageYOffset);
-    if (window.pageYOffset > 300) {
+    if (window.pageYOffset > 1000) {
       this.setState({ scrolled: true });
     } else {
       this.setState({ scrolled: false });
@@ -27,6 +28,8 @@ class Navbar extends Component {
           size={this.state.scrolled ? "mini" : "huge"}
         >
           <Menu.Item
+            as={Link}
+            to="/"
             name="home"
             active={activeItem === "home"}
             onClick={this.handleItemClick}
@@ -37,23 +40,17 @@ class Navbar extends Component {
             onClick={this.handleItemClick}
           />
           <Menu.Item
+            as={Link}
+            to="/portfolio-page"
             name="portfolio"
             active={activeItem === "portfolio"}
             onClick={this.handleItemClick}
           />
           <Menu.Item
-            name="experience"
-            active={activeItem === "experience"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="education"
-            active={activeItem === "education"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="contact"
-            active={activeItem === "contact"}
+            as={Link}
+            to="/artwork-gallery"
+            name="gallery"
+            active={activeItem === "gallery"}
             onClick={this.handleItemClick}
           />
           <Menu.Item position="right">

@@ -8,8 +8,8 @@ class PageTitle extends Component {
   render() {
     return (
       <div className="page-title">
-        <h1>Portfolio Gallery</h1>
-        <p>Curious about the story of each of my projects?</p>
+        <h1>{this.props.title}</h1>
+        <p>{this.props.description}</p>
       </div>
     );
   }

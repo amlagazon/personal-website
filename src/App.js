@@ -1,10 +1,12 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PortfolioPage from "./component/pages/PortfolioPage";
+import GalleryPage from "./component/pages/GalleryPage";
+import HomePage from "./component/pages/HomePage";
 import { useMediaQuery } from "react-responsive";
 import Navbar from "./component/menu/Navbar";
-import PortfolioPage from "./component/pages/PortfolioPage";
 import { Grid } from "semantic-ui-react";
 import React from "react";
 import "./App.css";
-import HomePage from "./component/pages/HomePage";
 
 function App() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -27,22 +29,32 @@ function App() {
     );
   } else if (isDesktopOrLaptop || isTabletOrMobile) {
     return (
-      <Grid>
-        <Grid.Row>
-          <Grid.Column>
-            <Navbar />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row />
-        <div className="current-page">
+      <Router>
+        <Grid>
           <Grid.Row>
             <Grid.Column>
-              <HomePage />
-              {/* <PortfolioPage /> */}
+              <Navbar />
             </Grid.Column>
           </Grid.Row>
-        </div>
-      </Grid>
+          <div className="current-page">
+            <Grid.Row>
+              <Grid.Column>
+                <Switch>
+                  <Route path="/portfolio-page">
+                    <PortfolioPage />
+                  </Route>
+                  <Route path="/artwork-gallery">
+                    <GalleryPage />
+                  </Route>
+                  <Route path="/">
+                    <HomePage />
+                  </Route>
+                </Switch>
+              </Grid.Column>
+            </Grid.Row>
+          </div>
+        </Grid>
+      </Router>
     );
   }
 }
